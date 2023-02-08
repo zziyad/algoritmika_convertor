@@ -32,7 +32,7 @@ fromInput.addEventListener('input', (e) => {
 toInput.addEventListener('input', (e) => {
   let v = 1;
   if (e.target.value.trim() !== '') {
-    if (!isNaN(parseFloat(e.target.value))) return alert('Not a number');
+    if (isNaN(parseFloat(e.target.value))) return alert('Not a number');
     v = parseFloat(e.target.value.trim());
 
 
@@ -70,7 +70,7 @@ async function getExchange(v1 = 'RUB', v2 = 'EUR') {
       if (v !== '') v = parseFloat(v);
       else v = 1;
       fromInputOutput.innerHTML = `1 ${v1} = ${rate} ${v2}`
-      toInputOutput.innerHTML = `1 ${v2} = ${result.rates[v2]} ${v1}`
+      toInputOutput.innerHTML = `1 ${v2} = ${result.rates[v1]} ${v1}`
       toInput.value = Math.trunc(rate * v * 100) / 100;;
     });
 
