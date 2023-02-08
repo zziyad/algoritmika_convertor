@@ -66,11 +66,12 @@ async function getExchange(v1 = 'RUB', v2 = 'EUR') {
     .then((data) => data.json()).then((result) => {
       console.log(result, v1);
       rate = result.rates[v2];
+      const rate2 = result.rates[v1]
       let v = fromInput.value.trim();
       if (v !== '') v = parseFloat(v);
       else v = 1;
       fromInputOutput.innerHTML = `1 ${v1} = ${rate} ${v2}`
-      toInputOutput.innerHTML = `1 ${v2} = ${result.rates[v1]} ${v1}`
+      toInputOutput.innerHTML = `1 ${v2} = ${rate2} ${v1}`
       toInput.value = Math.trunc(rate * v * 100) / 100;;
     });
 
