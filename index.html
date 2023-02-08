@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/style.css">
+  <title>Converter</title>
+</head>
+</head>
+<body>
+  <div class="wrapper">
+   <div class="header">
+    <div class="header_section">
+    <div class="icon margL">
+      <img src="./img/icon.png" alt="logo">
+    </div>
+    <div class="nav margL">
+      <nav>
+        <ul class="list">
+          <li style="color: black;">БАНК</li>
+          <li>БИЗНЕС</li>
+          <li>ИНВЕСТИЦИИ</li>
+          <li>СТРАХОВАНИЕ</li>
+          <li>МОБАЙЛ</li>
+          <li>ПУТЕШЕСТВИЕ</li>
+          <li>РАЗВЛЕЧЕНИЕ</li>
+        </ul>
+      </nav>
+    </div>
+      <div class="login">
+        <button class="login_btn">ВОЙТИ</button>
+      </div>
+    </div>
+   </div>
+   <div class="main_section">
+    <div class="container">
+      <div class="title_section">
+        <h1 class="title">Конвертер валют онлайн</h1>
+      </div>
+      <div class="sections">
+        <div class="section_one">
+
+          <div class="curency__switcher" data-id="from">
+            <div class="curency__switcher__item active">RUB</div>
+            <div class="curency__switcher__item ">USD</div>
+            <div class="curency__switcher__item">EUR</div>
+            <div class="curency__switcher__item ">GBP</div>
+        </div>
+        <div class="curency__input_box currency_from">
+          <input class="curency__input_box__input" data-reverse="false" type="text" value="1" maxlength="10">
+          <div class="curency__input_box__rate js-converter-rate-from">1 GBP = 1.2105 USD</div>
+      </div>   
+
+        </div>
+        <div class="section_two">
+          <div class="curency__switcher curency__switcher2" data-id="from">
+            <div class="curency__switcher__item ">RUB</div>
+            <div class="curency__switcher__item ">USD</div>
+            <div class="curency__switcher__item active">EUR</div>
+            <div class="curency__switcher__item ">GBP</div>
+        </div>
+          <div class="curency__input_box currency_to">
+            
+            <input class="curency__input_box__input js-converter-input" data-reverse="false" type="text" value="" maxlength="10">
+            <div class="curency__input_box__rate js-converter-rate-from">1 GBP = 1.2105 USD</div>
+        </div>        
+      </div>
+      </div>
+    </div>
+   </div>
+   <div class="footer">
+
+   </div>
+  </div>
+  <script src="./js/index.js"></script>
+</body>
+</html>
