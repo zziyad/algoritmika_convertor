@@ -23,7 +23,7 @@ fromInput.addEventListener('input', (e) => {
   if (e.target.value.trim() !== '') {
     if (isNaN(parseFloat(e.target.value))) return alert('Not a number');
     v = parseFloat(e.target.value.trim());
-    
+
   }
   toInput.value = Math.trunc(rate * v * 100) / 100;
 });
@@ -34,43 +34,43 @@ toInput.addEventListener('input', (e) => {
   if (e.target.value.trim() !== '') {
     if (!isNaN(parseFloat(e.target.value))) return alert('Not a number');
     v = parseFloat(e.target.value.trim());
-    
-    
+
+
   }
   fromInput.value = Math.trunc((1 / rate) * v * 100) / 100;
 });
 
 for (const elem of div.children) {
   elem.addEventListener('click', () => {
-    if (elem.classList[1] === 'active' ) return;
+    if (elem.classList[1] === 'active') return;
     [...div.children].forEach(el => el.classList.remove('active'))
     elem.classList.toggle("active");
     v1 = elem.textContent
-     getExchange(v1, v2);
+    getExchange(v1, v2);
     // return getExchange(v1, v2);
   })
 };
 
 for (const elem of div2.children) {
   elem.addEventListener('click', () => {
-    if (elem.classList[1] === 'active' ) return;
+    if (elem.classList[1] === 'active') return;
     [...div2.children].forEach(el => el.classList.remove('active'))
     elem.classList.toggle("active");
     v2 = elem.textContent
-     getExchange(v1, v2);
+    getExchange(v1, v2);
   })
 };
 
 async function getExchange(v1 = 'RUB', v2 = 'EUR') {
   fetch(URL + `${v1}`)
     .then((data) => data.json()).then((result) => {
-      
+      console.log(result, v1);
       rate = result.rates[v2];
       let v = fromInput.value.trim();
       if (v !== '') v = parseFloat(v);
       else v = 1;
       fromInputOutput.innerHTML = `1 ${v1} = ${rate} ${v2}`
-      toInputOutput.innerHTML = `1 ${v2} = ${result.rates[v1]} ${v1}`
+      toInputOutput.innerHTML = `1 ${v2} = ${result.rates[v2]} ${v1}`
       toInput.value = Math.trunc(rate * v * 100) / 100;;
     });
 
