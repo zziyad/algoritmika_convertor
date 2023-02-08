@@ -1,9 +1,3 @@
-const symbol = {
-  'USD': 'United State Dollar',
-  'RUB': 'Russian Rubl',
-  'EUR': 'Euro',
-  'GBP': 'Greate British Puand',
-};
 const URL = `https://api.exchangerate.host/latest?base=`;
 const div = document.querySelector('.curency__switcher');
 const div2 = document.querySelector('.curency__switcher2');
@@ -23,7 +17,6 @@ fromInput.addEventListener('input', (e) => {
   if (e.target.value.trim() !== '') {
     if (isNaN(parseFloat(e.target.value))) return alert('Not a number');
     v = parseFloat(e.target.value.trim());
-
   }
   toInput.value = Math.trunc(rate * v * 100) / 100;
 });
