@@ -21,8 +21,9 @@ let rate = 0;
 fromInput.addEventListener('input', (e) => {
   let v = 1;
   if (e.target.value.trim() !== '') {
-    if (!isNaN(parseFloat(e.target.value))) v = parseFloat(e.target.value.trim());
-    return 
+    if (isNaN(parseFloat(e.target.value))) return alert('Not a number');
+    v = parseFloat(e.target.value.trim());
+    
   }
   toInput.value = Math.trunc(rate * v * 100) / 100;
 });
@@ -31,7 +32,9 @@ fromInput.addEventListener('input', (e) => {
 toInput.addEventListener('input', (e) => {
   let v = 1;
   if (e.target.value.trim() !== '') {
-    if (!isNaN(parseFloat(e.target.value))) v = parseFloat(e.target.value.trim());
+    if (!isNaN(parseFloat(e.target.value))) return alert('Not a number');
+    v = parseFloat(e.target.value.trim());
+    
     
   }
   fromInput.value = Math.trunc((1 / rate) * v * 100) / 100;
